@@ -62,13 +62,13 @@ function Cart({ items, remove, clearCart }) {
                     </h4>
 
                     {items.length === 0 ? (
-                        <p className="text-secondary">Your basket is empty.</p>
+                        <p style={{ color: "#D7CCC8" }}>Your basket is empty.</p>
                     ) : (
                         <>
                             <div className="table-responsive">
-                                <table className="table table-dark table-sm">
+                                <table className="table table-sm" style={{ color: "#D7CCC8" }}>
                                     <thead>
-                                        <tr>
+                                        <tr style={{ borderColor: "#5D4037" }}>
                                             <th>Item</th>
                                             <th>Qty</th>
                                             <th>Price</th>
@@ -77,13 +77,14 @@ function Cart({ items, remove, clearCart }) {
                                     </thead>
                                     <tbody>
                                         {items.map((item) => (
-                                            <tr key={item.id}>
+                                            <tr key={item.id} style={{ borderColor: "#5D4037" }}>
                                                 <td className="text-white">{item.name}</td>
                                                 <td className="text-white">{item.qty}</td>
-                                                <td className="text-warning">${(item.price * item.qty).toFixed(2)}</td>
+                                                <td style={{ color: "#C0392B" }}>${(item.price * item.qty).toFixed(2)}</td>
                                                 <td>
                                                     <button
-                                                        className="btn btn-danger btn-sm"
+                                                        className="btn btn-sm text-white"
+                                                        style={{ backgroundColor: "#C0392B" }}
                                                         onClick={() => remove(item)}
                                                     >
                                                         &minus;
@@ -104,15 +105,16 @@ function Cart({ items, remove, clearCart }) {
                                     <span>GST (5%):</span>
                                     <span>${gst.toFixed(2)}</span>
                                 </div>
-                                <hr className="border-secondary" />
+                                <hr style={{ borderColor: "#5D4037" }} />
                                 <div className="d-flex justify-content-between fw-bold fs-5">
                                     <span>Total:</span>
-                                    <span className="text-warning">${total.toFixed(2)}</span>
+                                    <span style={{ color: "#C0392B" }}>${total.toFixed(2)}</span>
                                 </div>
                             </div>
 
                             <button
-                                className="btn btn-warning w-100 mt-4 fw-bold"
+                                className="btn w-100 mt-4 fw-bold text-white"
+                                style={{ backgroundColor: "#C0392B" }}
                                 onClick={() => setStep("checkout")}
                             >
                                 Proceed to Checkout
@@ -197,13 +199,20 @@ function Cart({ items, remove, clearCart }) {
 
                     <div className="d-flex justify-content-between fw-bold text-white mb-3">
                         <span>Total:</span>
-                        <span className="text-warning">${total.toFixed(2)}</span>
+                        <span style={{ color: "#C0392B" }}>${total.toFixed(2)}</span>
                     </div>
 
-                    <button className="btn btn-warning w-100 fw-bold" onClick={handleCheckout}>
+                    <button
+                        className="btn w-100 fw-bold text-white"
+                        style={{ backgroundColor: "#C0392B" }}
+                        onClick={handleCheckout}
+                    >
                         Place Order
                     </button>
-                    <button className="btn btn-outline-secondary w-100 mt-2" onClick={() => setStep("cart")}>
+                    <button
+                        className="btn btn-outline-light w-100 mt-2"
+                        onClick={() => setStep("cart")}
+                    >
                         Back to Basket
                     </button>
                 </div>
@@ -211,20 +220,24 @@ function Cart({ items, remove, clearCart }) {
 
             {step === "success" && (
                 <div className="sidenav-content text-center">
-                    <div className="text-success mb-3" style={{ fontSize: "4rem" }}>
+                    <div className="mb-3" style={{ fontSize: "4rem", color: "#2E7D32" }}>
                         <i className="fas fa-check-circle"></i>
                     </div>
                     <h4 className="text-white mb-3">Order Confirmed!</h4>
-                    <p className="text-secondary">
+                    <p style={{ color: "#D7CCC8" }}>
                         Thank you, <strong className="text-white">{form.name}</strong>!
                     </p>
-                    <p className="text-secondary">
+                    <p style={{ color: "#D7CCC8" }}>
                         {form.orderType === "delivery"
                             ? `Your order will be delivered to ${form.address} in 30-45 minutes.`
                             : "Your order will be ready for pickup in 15-20 minutes."}
                     </p>
-                    <p className="text-secondary">Payment: <strong className="text-white">{form.payment}</strong></p>
-                    <button className="btn btn-warning w-100 mt-4 fw-bold" onClick={handleNewOrder}>
+                    <p style={{ color: "#D7CCC8" }}>Payment: <strong className="text-white">{form.payment}</strong></p>
+                    <button
+                        className="btn w-100 mt-4 fw-bold text-white"
+                        style={{ backgroundColor: "#2E7D32" }}
+                        onClick={handleNewOrder}
+                    >
                         New Order
                     </button>
                 </div>

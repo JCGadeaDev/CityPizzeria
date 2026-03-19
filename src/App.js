@@ -1,5 +1,6 @@
 import "./assets/css/styles.css"
 import "./assets/css/box.css"
+import "./assets/css/basket.css"
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import DealsSection from "./components/DealsSection";

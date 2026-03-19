@@ -1,13 +1,13 @@
 .pizza-card {
-    background-color: #16213e;
-    border: 1px solid #0f3460;
+    background-color: #FAFAFA;
+    border: 1px solid #D7CCC8;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .pizza-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 24px rgba(78, 52, 46, 0.2);
 }
 
 .pizza-img-container {
@@ -15,7 +15,7 @@
     height: 180px;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
-    background-color: #0f3460;
+    background-color: #EFEBE9;
 }
 
 .pizza-img {

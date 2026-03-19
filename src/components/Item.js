@@ -8,12 +8,13 @@ function Item({ id, name, desc, image, price, addItem }) {
                     <img src={image} className="card-img-top pizza-img" alt={name} />
                 </div>
                 <div className="card-body d-flex flex-column">
-                    <h5 className="card-title text-white">{name}</h5>
-                    <p className="card-text text-secondary flex-grow-1">{desc}</p>
+                    <h5 className="card-title" style={{ color: "#4E342E" }}>{name}</h5>
+                    <p className="card-text flex-grow-1" style={{ color: "#8D6E63" }}>{desc}</p>
                     <div className="d-flex justify-content-between align-items-center mt-2">
-                        <span className="text-warning fw-bold fs-5">${price.toFixed(2)}</span>
+                        <span className="fw-bold fs-5" style={{ color: "#C0392B" }}>${price.toFixed(2)}</span>
                         <button
-                            className="btn btn-warning btn-sm"
+                            className="btn btn-sm text-white"
+                            style={{ backgroundColor: "#C0392B" }}
                             onClick={() => addItem({ id, name, desc, image, price })}
                         >
                             Add to Basket

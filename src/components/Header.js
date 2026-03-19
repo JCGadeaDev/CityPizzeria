@@ -1,10 +1,9 @@
 import React from "react";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/nav-bar.css";
 
 function Header({ name, basket }) {
     return (
-        <nav className="navbar navbar-expand-md navbar-dark sticky-top px-4" style={{ backgroundColor: "#1a1a2e" }}>
+        <nav className="navbar navbar-expand-md navbar-dark sticky-top px-4" style={{ backgroundColor: "#4E342E" }}>
             <a className="navbar-brand fw-bold fs-4" href="/">
                 <i className="fas fa-pizza-slice me-2"></i>{name}
             </a>

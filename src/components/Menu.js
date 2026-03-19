@@ -3,10 +3,10 @@ import Item from "./Item";
 
 function Menu({ name, desc, menu, addItem }) {
     return (
-        <section id="menu" style={{ backgroundColor: "#16213e", padding: "60px 0" }}>
+        <section id="menu" style={{ backgroundColor: "#F5E6CC", padding: "60px 0" }}>
             <div className="container">
-                <h2 className="text-white text-center fw-bold mb-2">{name}</h2>
-                <p className="text-secondary text-center mb-5">{desc}</p>
+                <h2 className="text-center fw-bold mb-2" style={{ color: "#4E342E" }}>{name}</h2>
+                <p className="text-center mb-5" style={{ color: "#8D6E63" }}>{desc}</p>
                 <div className="row justify-content-center">
                     {menu.map((item) => (
                         <Item

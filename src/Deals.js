@@ -1,27 +1,27 @@
 const Deals = [
     {
-        id: 1,
+        id: 101,
         name: "2x1 Tuesdays",
         desc: "Buy one pizza and get the second one free every Tuesday.",
-        image: "https://api.pizzahut.io/v1/content/en-au/au-1/images/pizza/Pepperoni-Lovers.9e2875c1caa8da03c22e9e3fad31a1b8.1.jpg",
+        image: "https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
         originalPrice: 13.99,
         discountedPrice: 6.99,
         badge: "50% OFF"
     },
     {
-        id: 2,
+        id: 102,
         name: "Family Deal",
         desc: "Two large pizzas, garlic bread, and four drinks for the whole family.",
-        image: "https://api.pizzahut.io/v1/content/en-au/au-1/images/pizza/Smoky-BBQ-Meatlovers.ab6c4bc0b7d5dd6367e5ba25e05cde3d.1.jpg",
+        image: "https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
         originalPrice: 49.99,
         discountedPrice: 39.99,
         badge: "20% OFF"
     },
     {
-        id: 3,
+        id: 103,
         name: "Pizza of the Day",
         desc: "A different specialty pizza featured each day at a special price.",
-        image: "https://api.pizzahut.io/v1/content/en-au/au-1/images/pizza/Veg-Supreme.6e1f46a03c87fe72dbc57e40ffd54da6.1.jpg",
+        image: "https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
         originalPrice: 12.99,
         discountedPrice: 10.25,
         badge: "21% OFF"
