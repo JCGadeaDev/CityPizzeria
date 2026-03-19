@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import "./assets/css/styles.css"
+import "./assets/css/box.css"
+import Header from "./components/Header";
+import Menu from "./components/Menu";
+import DealsSection from "./components/DealsSection";
+import Items from "./Items";
+import Deals from "./Deals";
+import Cart from "./components/Cart";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          City Pizzeria
-        </a>
-      </header>
-    </div>
+
+    // Basket
+    const [basket, setBasket] = useState([]);
+
+    // Add to basket
+    const addItem = (pizza) => {
+        // Check if the item exist or not
+        const exist = basket.find((item) => item.id === pizza.id);
+        if (exist) {
+            setBasket(basket.map(item => item.id === pizza.id ? {...exist, qty: exist.qty + 1} : item));
+        } else {
+            setBasket([...basket, {...pizza, qty: 1}]);
+        }
+    };
+
+    // Clear basket
+    const clearCart = () => setBasket([]);
+
+    // Remove from basket
+    const removeItem = (pizza) => {
+        // Check if the item exist or not
+        const exist = basket.find((item) => item.id === pizza.id);
+        if (exist.qty === 1) {
+            setBasket(basket.filter((item) => item.id !== pizza.id));
+        } else {
+            setBasket(basket.map(item => item.id === pizza.id ? {...exist, qty: exist.qty - 1} : item));
+        }
+    };
+return (
+<div className="App">
+            <div>
+                <Header name="City Pizzeria" basket={basket.length}/>
+                <Menu name="Pizzas" desc="Tasty pizzas made with fresh ingredients" menu={Items} addItem={addItem}/>
+                <DealsSection deals={Deals} addItem={addItem}/>
+                <Cart items={basket} remove={removeItem} clearCart={clearCart}/>
+            </div>
+        </div>
   );
 }
 
